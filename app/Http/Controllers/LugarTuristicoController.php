@@ -55,11 +55,15 @@ class LugarTuristicoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(LugarTuristico $lugarTuristico)
     {
-        //
-    }
+       // Gracias al "Route Model Binding" de Laravel, la variable $lugarTuristico
+       // ya contiene el lugar turístico que se quiere editar.
 
+       // Simplemente retornamos una nueva vista llamada 'edit.blade.php'
+       // y le pasamos los datos de ese lugar.
+       return view('lugares.edit', ['lugar' => $lugarTuristico]);
+    }
     /**
      * Update the specified resource in storage.
      */

@@ -99,15 +99,17 @@
                     <a href="#">Ver detalles</a>
 
                     {{-- Solo muestra los botones de acción si el usuario es admin --}}
+                    {{-- =================== AÑADE ESTE BLOQUE DE CÓDIGO AQUÍ =================== --}}
                     @if(auth()->check() && auth()->user()->role === 'admin')
-                        <div style="margin-top: 10px;">
-                            <a href="{{ route('lugares.edit', $lugar->id) }}" style="padding: 5px 10px; background-color: #ffc107; color: black; text-decoration: none; border-radius: 3px;">
-                                Editar
-                            </a>
-                            {{-- Aquí pondremos el botón de eliminar más adelante --}}
-                        </div>
-                    @endif
-                    </div>
+                       <div style="margin-top: 10px;">
+                           <a href="{{ route('lugares.edit', $lugar->id) }}" style="padding: 5px 10px; background-color: #ffc107; color: black; text-decoration: none; border-radius: 3px;">
+                               Editar
+                           </a>
+                           {{-- Aquí pondremos el botón de eliminar más adelante --}}
+                       </div>
+                   @endif
+    {{-- =================== FIN DEL BLOQUE A AÑADIR =================== --}}
+                </div>
             </div>
         @empty
             <div>
